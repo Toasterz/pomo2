@@ -3,8 +3,14 @@ $(document).ready(function(){
   var mins = $('#mins');
   var secs = $('#secs');
   var resetbutton = $('#resetbutton');
+  var ding = document.getElementById('ding');
 
   startbutton.on('click', startCountup);
+
+  function playSound()
+  {
+    ding.play();
+  }
 
 function startCountup(){
   var countup = setInterval(function(){
@@ -27,6 +33,13 @@ function startCountup(){
     if (minsVal >= 9 && secondsVal === 59)
     {
       mins.text(minsVal+1);
+    }
+    if(minsVal === 24 && secondsVal === 59)
+    {
+      ding.play();
+      alert("TAKE A BREAK YOU SHMUCK");
+      minsVal = (mins.text("0" + 5));
+      return;
     }
     }, 1000);
   }
