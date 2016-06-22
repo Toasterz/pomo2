@@ -19,10 +19,14 @@ function startCountup(){
     {
       secs.text(secondsVal+1);
     }
-    if (secondsVal > 59)
+    if (secondsVal >= 59)
     {
-      mins.text(minsVal +1);
+      mins.text("0" + (minsVal +1));
       secs.text("00");
+    }
+    if (minsVal >= 9 && secondsVal === 59)
+    {
+      mins.text(minsVal+1);
     }
     }, 1000);
   }
