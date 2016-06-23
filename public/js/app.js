@@ -6,12 +6,28 @@ $(document).ready(function(){
   var ding = document.getElementById('ding');
 
   startbutton.on('click', startCountup);
-
-  function playSound()
-  {
-    ding.play();
-  }
-
+  function startCountdown(){
+    var countdown = setInterval(function(){
+      var secondsVal = +secs.text();
+      var minsVal = +mins.text();
+      minsVal = (mins.text("0" + 5));
+      if(secondsVal === 0)
+      {
+        secs.text(59);
+        mins.text(minsVal-1);
+      }
+      else
+      {
+        if(secondsVal <= 10)
+        {
+          secs.text("0" + (secondsVal-1));
+        }
+        else {
+          secs.text(secondsVal-1);
+        }
+      }
+      }, 1000);
+    }
 function startCountup(){
   var countup = setInterval(function(){
     var secondsVal = +secs.text();
@@ -38,8 +54,7 @@ function startCountup(){
     {
       ding.play();
       alert("TAKE A BREAK YOU SHMUCK");
-      minsVal = (mins.text("0" + 5));
-      return;
+      startCountdown();
     }
     }, 1000);
   }
