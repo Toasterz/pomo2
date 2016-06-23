@@ -10,7 +10,14 @@ $(document).ready(function(){
     var countdown = setInterval(function(){
       var secondsVal = +secs.text();
       var minsVal = +mins.text();
-      minsVal = (mins.text("0" + 4));
+      if(secondsVal === 0 && minsVal === 0)
+      {
+        ding.play();
+        alert("BREAK'S OVER, SHMUCK");
+        clearInterval(countdown);
+        return;
+      }
+      minsVal = (mins.text("0" + 0));
       if(secondsVal === 0)
       {
         secs.text(59);
@@ -26,6 +33,7 @@ $(document).ready(function(){
           secs.text(secondsVal-1);
         }
       }
+
       }, 1000);
     }
 function startCountup(){
@@ -56,7 +64,7 @@ function startCountup(){
       alert("TAKE A BREAK YOU SHMUCK");
       clearInterval(countup);
       startCountdown();
-      return 0;
+      return;
     }
     }, 1000);
   }
