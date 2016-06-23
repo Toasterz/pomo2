@@ -10,7 +10,7 @@ $(document).ready(function(){
     var countdown = setInterval(function(){
       var secondsVal = +secs.text();
       var minsVal = +mins.text();
-      minsVal = (mins.text("0" + 5));
+      minsVal = (mins.text("0" + 4));
       if(secondsVal === 0)
       {
         secs.text(59);
@@ -54,7 +54,9 @@ function startCountup(){
     {
       ding.play();
       alert("TAKE A BREAK YOU SHMUCK");
+      clearInterval(countup);
       startCountdown();
+      return 0;
     }
     }, 1000);
   }
