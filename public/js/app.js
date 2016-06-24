@@ -2,26 +2,24 @@ $(document).ready(function(){
   var startbutton =$('#startbutton');
   var mins = $('#mins');
   var secs = $('#secs');
-  var resetbutton = $('#resetbutton');
   var ding = document.getElementById('ding');
-
   startbutton.on('click', startCountup);
   function startCountdown(){
     var countdown = setInterval(function(){
       var secondsVal = +secs.text();
-      var minsVal = +mins.text();
+      var minsVal =  +mins.text();
       if(secondsVal === 0 && minsVal === 0)
       {
         ding.play();
         alert("BREAK'S OVER, SHMUCK");
+        startbutton.removeAttr('disabled');
         clearInterval(countdown);
         return;
       }
-      minsVal = (mins.text("0" + 0));
       if(secondsVal === 0)
       {
         secs.text(59);
-        mins.text(minsVal-1);
+        mins.text("0" + (0));
       }
       else
       {
@@ -37,10 +35,10 @@ $(document).ready(function(){
       }, 1000);
     }
 function startCountup(){
+  startbutton.attr('disabled', true);
   var countup = setInterval(function(){
     var secondsVal = +secs.text();
     var minsVal = +mins.text();
-
     if (secondsVal != 59)
     {
       secs.text("0" + (secondsVal + 1));
