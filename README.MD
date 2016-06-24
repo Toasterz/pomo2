@@ -1,5 +1,5 @@
 #Pomodoro timer
-I am building my own pomodoro timer web app using:
+I am building a pomodoro timer web app using:
   - HTML
   - Bootstrap
   - JQuery
@@ -9,12 +9,9 @@ I am building my own pomodoro timer web app using:
 ###User Stories:
   1. As a user, when I navigate to the page, I see a timer at 0 mins.
   2. As a user, when I navigate to the page I want to see a start button that starts the timer counting up.
-  3. As a user, when I navigate to the page I want to see a grayed-out reset button
-  3. As a user, when I click the start button I want to see a timer start counting up.
-  4. As a user, when the clock is at 25:00 I want to hear a beeping.
-  5. As a user, when the clock is at 25:00 I want to see a browser pop-up.
-  6. As a user, when I close the browser pop-up I want to see a 5 minute timer begin counting down.
-  7. As a user, when the 5 minute countdown reaches 0, I want to see a browser-pop up.
-  8. As a user, when I close out of the second browser pop-up I want to see an active reset button.
-  9. As a user, when I click the reset button I want the clock to go from 25:00 to 00:00.
-  10.As a user, when I click the start button I want the timer to start counting up.
+  3. As a user, when I click the start button, the timer counts up to 25 mins.
+  4. As a user, when the timer hits 25 minutes I want to hear a bing and see a pop up.
+  5. As a user, when I click out of the pop up I want a 5 min timer to start counting down automatically.
+  6. As a user, when the 5 min timer hits 0 mins I want to hear a bing and see a pop up.
+  7. As a user, when I click the start button I want to be able to repeat the process.
+
