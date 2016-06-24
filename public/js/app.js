@@ -1,3 +1,4 @@
+//Pomo 2, by me
 $(document).ready(function(){
   var startbutton =$('#startbutton');
   var mins = $('#mins');
