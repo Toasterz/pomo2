@@ -20,7 +20,7 @@ $(document).ready(function(){
       if(secondsVal === 0)
       {
         secs.text(59);
-        mins.text("0" + (0));
+        mins.text("0" + (4));
       }
       else
       {
